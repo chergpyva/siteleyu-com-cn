@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chergpyva.github.io/siteleyu-com-cn/sitemap.xml
