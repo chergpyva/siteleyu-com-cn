@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>满冠体育 · 体育产业知识索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f6f8fc;
+            color: #1f2a3c;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* —— 深色头图 —— */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a2f44 100%);
+            color: #eef3f9;
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #b6cbd9;
+            max-width: 600px;
+            margin: 0 auto 0.25rem;
+            font-weight: 350;
+        }
+
+        .hero .tagline {
+            font-size: 0.9rem;
+            color: #7d9bb8;
+            margin-top: 0.6rem;
+            border-top: 1px solid #2f4760;
+            display: inline-block;
+            padding-top: 0.6rem;
+        }
+
+        /* —— 正文容器 —— */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3.5rem;
+            flex: 1;
+        }
+
+        /* —— 目录感布局 —— */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.2rem 1.4rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .info-card .card-icon {
+            font-size: 1.7rem;
+            margin-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.3rem 0 0.4rem;
+            color: #0b1a2e;
+        }
+
+        .info-card p {
+            font-size: 0.92rem;
+            color: #3d4d62;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card .meta {
+            font-size: 0.8rem;
+            color: #7b8b9e;
+            border-top: 1px dashed #e4e9f0;
+            padding-top: 0.6rem;
+            margin-top: 0.2rem;
+        }
+
+        /* —— 说明区 / 提示区 —— */
+        .notice-area {
+            background: #eef4fa;
+            border-left: 4px solid #2b6f9e;
+            padding: 1.1rem 1.4rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.6rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        .notice-area strong {
+            color: #0b2a44;
+        }
+
+        .notice-area a {
+            color: #1a5c87;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .notice-area a:hover {
+            color: #0b3b5e;
+        }
+
+        /* —— 相关信息区 —— */
+        .related-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            margin: 2rem 0 1.2rem;
+            border: 1px solid #e5ecf3;
+        }
+
+        .related-box h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .related-box h2 small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #6b7d92;
+        }
+
+        .related-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            list-style: none;
+            padding: 0.2rem 0 0;
+        }
+
+        .related-items li {
+            font-size: 0.92rem;
+            padding: 0.2rem 0;
+        }
+
+        .related-items li::before {
+            content: "·";
+            color: #2b6f9e;
+            font-weight: bold;
+            margin-right: 0.4rem;
+        }
+
+        .related-items a {
+            color: #1a5c87;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8cddf;
+            padding-bottom: 1px;
+        }
+
+        .related-items a:hover {
+            color: #0b3b5e;
+            border-bottom-style: solid;
+        }
+
+        /* —— FAQ 摘要 —— */
+        .faq-mini {
+            margin: 1.8rem 0 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem 0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #e9eef4;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #0b1a2e;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #3d4d62;
+            margin-top: 0.2rem;
+        }
+
+        /* —— 底部 —— */
+        .footer-note {
+            margin-top: 2.8rem;
+            font-size: 0.82rem;
+            color: #6e7f93;
+            text-align: center;
+            border-top: 1px solid #e2e9f1;
+            padding-top: 1.6rem;
+        }
+
+        .footer-note a {
+            color: #1a5c87;
+            text-decoration: none;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* —— 响应式微调 —— */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .container {
+                padding: 1.5rem 1rem 2.5rem;
+            }
+            .section-grid {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>满冠体育 · 知识索引</h1>
+        <p class="sub">体育产业信息入口 · 项目库 · 资源导览</p>
+        <span class="tagline">📋 快速识别平台用途与内容边界</span>
+    </header>
+
+    <!-- 正文 -->
+    <main class="container">
+
+        <!-- 目录感卡片网格：从用户视角说明平台用途 -->
+        <div class="section-grid">
+            <div class="info-card">
+                <div class="card-icon">🏟️</div>
+                <h3>体育项目库</h3>
+                <p>覆盖大众体育、专项训练、赛事运营等核心板块，聚合多维度项目信息。</p>
+                <div class="meta">数据维度 · 配套设施</div>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">📊</div>
+                <h3>行业知识节点</h3>
+                <p>赛事组织、场馆管理、青训体系、运动康复等领域的结构化知识片段。</p>
+                <div class="meta">标准 · 案例 · 流程</div>
+            </div>
+            <div class="info-card">
+                <div class="card-icon">🔗</div>
+                <h3>资源导航</h3>
+                <p>政策文件、合作单位、器材标准、人才库等实用链接与参考索引。</p>
+                <div class="meta">外部参考 · 内部索引</div>
+            </div>
+        </div>
+
+        <!-- 说明区：介绍网站定位，自然嵌入链接 -->
+        <div class="notice-area">
+            <strong>关于本站</strong> · 
+            <a href="https://cnzh-mgsports.com">满冠体育</a> 汇集体育产业相关的项目资料、知识条目与实用工具。 
+            用户可通过站内分类快速定位赛事管理、场地设施、运动员培养等细分主题。 
+            本索引页作为知识库入口，帮助首次访问者理解内容结构。
+        </div>
+
+        <!-- 提示区＋相关信息区合并灵活布局 -->
+        <div class="related-box">
+            <h2>📌 相关信息 <small>主题标签 · 常见关联</small></h2>
+            <ul class="related-items">
+                <li>赛事组织流程</li>
+                <li>场馆运营标准</li>
+                <li>青少年体育训练</li>
+                <li>运动康复与防护</li>
+                <li>体育器材规范</li>
+                <li>数字体育工具</li>
+                <li><a href="https://cnzh-mgsports.com">满冠体育</a> · 更新日志</li>
+                <li>合作机构登记</li>
+            </ul>
+        </div>
+
+        <!-- FAQ 摘要（轻量问答） -->
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="q">❓ 这个网站主要提供什么内容？</div>
+                <div class="a">围绕体育产业的资料索引与知识库，涵盖项目资料、运营流程、标准文档及合作资源。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">❓ 如何快速找到某个体育项目的信息？</div>
+                <div class="a">可使用站内分类目录或搜索功能；首页卡片区归纳了主要板块方向，直接点选即可浏览。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">❓ 内容更新频率如何？</div>
+                <div class="a">定期随行业动态及合作方反馈补充条目，具体更新记录可在相关页面中查阅。</div>
+            </div>
+        </div>
+
+        <!-- 简洁页脚 -->
+        <div class="footer-note">
+            <a href="https://cnzh-mgsports.com">满冠体育</a> · 知识库入口 · 信息供参考，请以官方最新发布为准
+        </div>
+
+    </main>
+
+</body>
+</html>
