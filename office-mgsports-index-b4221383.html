@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>满冠体育 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f3eb;
+      font-family: "Georgia", "Noto Serif SC", "Source Han Serif CN", serif;
+      color: #2d2a24;
+      line-height: 1.75;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fcf9f3;
+      border-radius: 2px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      padding: 3rem 2.5rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .page {
+        padding: 2rem 1.2rem;
+      }
+    }
+
+    /* 标题体系 */
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 450;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid #d6cfc0;
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.8rem;
+      color: #2b2620;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin: 2.2rem 0 0.8rem 0;
+      color: #3b352d;
+      border-left: 4px solid #b5a693;
+      padding-left: 0.9rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.4rem 0 0.3rem 0;
+      color: #4a4238;
+    }
+
+    p {
+      margin: 0.9rem 0;
+      text-indent: 1.8em;
+    }
+
+    /* 引用块 / 提示框 */
+    .insight-box {
+      background: #efe9df;
+      padding: 1.4rem 1.8rem;
+      margin: 1.8rem 0;
+      border-left: 6px solid #9a8c7a;
+      font-style: normal;
+      color: #2d2a24;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .insight-box p {
+      text-indent: 0;
+      margin: 0.4rem 0;
+    }
+
+    .tip-box {
+      background: #eae4d8;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0;
+      border-radius: 4px;
+      border: 1px solid #d3caba;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6);
+    }
+
+    .tip-box p {
+      text-indent: 0;
+      margin: 0.2rem 0;
+    }
+
+    .tip-box strong {
+      color: #3d352b;
+      font-weight: 600;
+    }
+
+    /* 内联链接 */
+    a {
+      color: #5b4d3b;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b6a996;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+
+    a:hover {
+      color: #2b231c;
+      text-decoration-color: #2b231c;
+    }
+
+    /* 列表 */
+    ul {
+      margin: 1rem 0 1.2rem 1.5rem;
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin: 0.5rem 0;
+    }
+
+    ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #8d7f6b;
+      font-weight: 300;
+    }
+
+    /* 亮点卡片（简洁） */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.6rem 0 0.6rem 0;
+    }
+
+    .feature-item {
+      flex: 1 1 200px;
+      background: transparent;
+      border: 1px solid #ded5c6;
+      padding: 1.2rem 1.4rem;
+      border-radius: 2px;
+      background: #fbf7f0;
+    }
+
+    .feature-item h4 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #3b352d;
+    }
+
+    .feature-item p {
+      text-indent: 0;
+      font-size: 0.95rem;
+      margin: 0.2rem 0;
+    }
+
+    /* 分隔线 */
+    .hr-light {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d6cfc0, transparent);
+      margin: 2.2rem 0;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      margin: 0.8rem 0;
+      padding: 0.2rem 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #3f382f;
+    }
+
+    .faq-a {
+      margin: 0.1rem 0 0.4rem 1.2rem;
+      color: #4b443a;
+    }
+
+    /* 脚注 */
+    .footnote {
+      font-size: 0.85rem;
+      color: #7c7366;
+      margin-top: 2.8rem;
+      border-top: 1px solid #ded5c6;
+      padding-top: 1.2rem;
+      text-align: left;
+    }
+
+    .footnote p {
+      text-indent: 0;
+      margin: 0.2rem 0;
+    }
+
+    .quiet-link {
+      color: #7c7366;
+      text-decoration: none;
+      border-bottom: 1px dotted #b4aa9b;
+    }
+
+    .quiet-link:hover {
+      color: #3b352d;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>满冠体育 · 产品说明与使用指南</h1>
+
+  <!-- 摘要 -->
+  <p>
+    这是一份关于 <a href="https://office-mgsports.com">满冠体育</a> 的平台说明，从产品构成、功能亮点到实际使用与访问提示，以简明扼要的方式整理。无论你是初次了解，还是想确认某些操作细节，都可以在此找到相对完整的描述。
+  </p>
+
+  <!-- 核心说明区：摘要 -->
+  <h2>平台摘要</h2>
+  <p>
+    满冠体育面向体育管理与运营场景，提供数字化的工具与数据服务。涵盖赛事组织、队伍信息管理、场地调度、统计报表等常见模块，并支持根据实际业务进行配置。系统设计侧重稳定性与数据一致性，适用于多角色协作环境。
+  </p>
+  <p>
+    当前版本持续迭代，功能边界与操作流程在官方文档中均有说明。建议使用者先了解基础模块，再逐步深入高级设置。
+  </p>
+
+  <!-- 亮点（卡片式）-->
+  <h2>功能亮点</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h4>模块化结构</h4>
+      <p>赛事、队伍、场地、人员等模块相互独立，可组合使用。</p>
+    </div>
+    <div class="feature-item">
+      <h4>权限与角色</h4>
+      <p>支持管理员、裁判、领队等多角色权限控制，数据隔离清晰。</p>
+    </div>
+    <div class="feature-item">
+      <h4>数据持久化</h4>
+      <p>操作日志与备份机制保障关键业务数据可追溯。</p>
+    </div>
+    <div class="feature-item">
+      <h4>响应式适配</h4>
+      <p>后台界面兼顾桌面与移动设备，基础操作不受限。</p>
+    </div>
+  </div>
+
+  <!-- 使用建议（提示框形式）-->
+  <h2>使用建议</h2>
+  <div class="tip-box">
+    <p><strong>初次使用：</strong> 建议先完整浏览左侧导航，了解每个模块的入口与基本用途。核心功能如“赛事管理”和“队伍管理”通常包含示例数据，可用来模拟流程。</p>
+    <p><strong>日常操作：</strong> 对于常用操作（如录入成绩、调整赛程），可以记住对应快捷键或固定路径，提高效率。注意每次修改后保存，并留意页面顶部的反馈提示。</p>
+    <p><strong>数据维护：</strong> 定期导出报表或备份数据库。如遇异常或数据不一致，可参照帮助文档中的校验步骤进行核对。</p>
+  </div>
+
+  <!-- 使用场景（引用块风格）-->
+  <h2>典型使用场景</h2>
+  <div class="insight-box">
+    <p>组织校内联赛时，可通过满冠体育快速创建赛事、导入参赛队伍名单、自动生成对阵表，并实时更新积分与排名。</p>
+    <p>在训练营或多场地活动中，利用场地模块进行时段分配，避免冲突。所有变更会同步通知关联角色。</p>
+    <p>赛后统计环节，系统自动汇总比赛数据，并支持导出为表格用于归档或对外发布。</p>
+  </div>
+
+  <!-- 访问说明：可信但克制 -->
+  <h2>访问说明与注意事项</h2>
+  <p>
+    本平台通过浏览器直接访问 <a href="https://office-mgsports.com">满冠体育</a> 即可进入工作台。建议使用最新版本的 Chrome、Edge 或 Firefox 以获得完整兼容性。首次登录请确认你的账号已由管理员开通。
+  </p>
+  <p>
+    平台不主动收集非必要的个人信息，所有业务数据归属于使用方。建议定期更新密码并开启二次验证（如可用）。请勿在公共网络上暴露敏感管理权限。
+  </p>
+  <div class="tip-box">
+    <p><strong>提醒：</strong> 页面加载缓慢或部分功能不可用时，优先检查网络环境与浏览器版本。官方目前未提供移动端原生应用，但响应式设计可保证手机端基础操作。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <h2>常见问题摘要</h2>
+  <div class="faq-item">
+    <div class="faq-q">Q: 忘记登录密码怎么办？</div>
+    <div class="faq-a">可在登录页点击“忘记密码”，按提示通过注册邮箱重置。如未绑定邮箱，请联系管理员。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q: 能否导出赛事数据到 Excel？</div>
+    <div class="faq-a">在相应模块的列表页通常有“导出”按钮，支持导出为 .xlsx 或 .csv 格式。部分自定义报表需手动配置字段。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q: 移动端浏览器上操作正常吗？</div>
+    <div class="faq-a">核心查看与简单录入功能正常，复杂排版（如多选、拖拽）建议在桌面端完成。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q: 是否支持多语言？</div>
+    <div class="faq-a">目前界面以中文为主，部分字段支持国际化配置。具体请咨询平台服务团队。</div>
+  </div>
+
+  <!-- 分割线 -->
+  <hr class="hr-light">
+
+  <!-- 脚注——可信且克制的说明 -->
+  <div class="footnote">
+    <p>本文档仅作为产品功能与使用方向的概述，不构成任何形式的承诺或保证。实际功能以 <a href="https://office-mgsports.com" class="quiet-link">满冠体育</a> 线上版本为准。</p>
+    <p>如需更详尽的帮助文档或技术支持，可登录平台后查看“帮助”中心。部分说明可能随版本调整而更新。</p>
+  </div>
+
+</div>
+</body>
+</html>
